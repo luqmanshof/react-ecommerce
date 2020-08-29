@@ -3,9 +3,12 @@ import { addToCart, removeFromCart } from "../actions/cartActions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CheckoutSteps from "../components/CheckoutSteps";
+import { createOrder } from "../actions/orderActions";
 
 function PlaceOrderScreen(props) {
   const cart = useSelector(state => state.cart);
+  const orderCreate = useSelector(state => state.orderCreate);
+  const { loading, success, error, order } = orderCreate;
 
   const { cartItems, shipping, payment } = cart;
   if (!shipping.address) {
@@ -15,18 +18,25 @@ function PlaceOrderScreen(props) {
   }
 
   const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
-  const shippingPrice = itemsPrice > 100 ? 0 : 10;
-  const taxPrice = 0.15 * itemsPrice;
+  const shippingPrice = itemsPrice > 30000 ? 0 : 1000;
+  const taxPrice = 0;
+  // const taxPrice = 0.15 * itemsPrice;
   const totalPrice = itemsPrice + shippingPrice + taxPrice;
 
   const dispatch = useDispatch();
 
   const placeOrderHandler = () => {
+    dispatch(createOrder({
+      orderItems: cartItems, shipping, payment, itemsPrice,
+      shippingPrice, taxPrice, totalPrice
+    }))
     // create an order
   }
   useEffect(() => {
-
-  }, []);
+    if (success) {
+      props.history.push("/order/" + order._id);
+    }
+  }, [success]);
 
   const checkoutHandler = () => {
     props.history.push("/signin?redirect=shipping");
@@ -75,7 +85,7 @@ function PlaceOrderScreen(props) {
                   </div>
                   <div className="cart-price">
                     <span>&#8358;</span>
-                    {item.price}
+                    {item.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
                   </div>
                 </li>
               ))
@@ -93,19 +103,19 @@ function PlaceOrderScreen(props) {
           </li>
           <li>
             <div>Items</div>
-            <div><span>&#8358;</span>{itemsPrice}</div>
+            <div><span>&#8358;</span>{itemsPrice.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</div>
           </li>
           <li>
             <div>Shipping</div>
-            <div><span>&#8358;</span>{shippingPrice}</div>
+            <div><span>&#8358;</span>{shippingPrice.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</div>
           </li>
           <li>
             <div>Tax</div>
-            <div><span>&#8358;</span>{taxPrice}</div>
+            <div><span>&#8358;</span>{taxPrice.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</div>
           </li>
           <li>
             <div>Order Total</div>
-            <div><span>&#8358;</span>{totalPrice}</div>
+            <div><span>&#8358;</span>{totalPrice.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</div>
           </li>
         </ul>
       </div>

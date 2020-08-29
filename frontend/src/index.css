@@ -86,9 +86,9 @@ a:hover {
 .products li {
   list-style-type: none;
   padding: 0;
-  flex: 0 1 34rem;
+  flex: 0 1 28rem;
   margin: 1rem;
-  height: 50rem;
+  height: 38rem;
   border-bottom: 0.1rem #c0c0c0 solid;
 }
 .product {
@@ -98,8 +98,8 @@ a:hover {
   height: 100%;
 }
 .product-image {
-  max-width: 34rem;
-  max-height: 34rem;
+  max-width: 24rem;
+  max-height: 24rem;
 }
 .product-name {
   font-size: 2rem;
@@ -213,6 +213,9 @@ a:hover {
 }
 .button.secondary {
   background-color: #f0f0f0;
+}
+.button.small {
+  padding: 0.1rem;
 }
 .text-center {
   text-align: center;
@@ -383,4 +386,73 @@ tbody>tr:nth-child(odd) {
     font-size: 2rem;
     font-weight: bold;
     color: #c04000;
+}
+.placeorder-actions-payment > div {
+  width: 100%;
+}
+
+/* profile */
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+}
+.profile-info {
+  flex: 1 1 30rem;
+}
+.profile-orders {
+  flex: 3 1 60rem;
+}
+
+/* Admin */
+.dropdown{
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  position: absolute;
+  display: none;
+  right: 0;
+  padding: 1rem;
+  list-style-type: none;
+  z-index: 1;
+  background-color: #203040;
+  margin: 0;
+  margin-top: 0.4rem;
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+/* Filter */
+
+.filter{
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem auto;
+  max-width: 45rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.filter input,
+.filter button,
+.filter select{
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border:.1rem #c0c0c0 solid;
+  font-size: 1.6rem;
+
+}
+.categories{
+
+  padding: 0;
+  list-style-type: none;
+}
+.categories a{
+  display: flex;
+  padding: 1rem;
+}
+
+.categories a:hover{
+  background-color: #c0c0c0;
 }

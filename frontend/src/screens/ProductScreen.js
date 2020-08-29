@@ -28,7 +28,7 @@ function ProductScreen(props) {
             error ? <div>{error}</div> :
                 (
                     <div className="details">
-                        <div className="detail-image">
+                        <div className="details-image">
                             <img src={product.image} alt="product" />
                         </div>
                         <div className="details-info">
@@ -40,7 +40,7 @@ function ProductScreen(props) {
                                     {product.rating} Stars ({product.numReviews} Reviews)
                                 </li>
                                 <li>
-                                    Price: <b><span>&#8358;</span>{product.price}</b>
+                                    Price: <b><span>&#8358;</span> {product.price}</b>
                                 </li>
                                 <li>
                                     Description:
@@ -53,7 +53,7 @@ function ProductScreen(props) {
                         <div className="details-action">
                             <ul>
                                 <li>
-                                    Price: {product.price}
+                                    Price: <span>&#8358;</span> {product.price}
                                 </li>
                                 <li>
                                     Satus: {product.countInStock > 0 ? "In Stock" : "Out of stock"}

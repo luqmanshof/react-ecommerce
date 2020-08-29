@@ -73,7 +73,7 @@ function CartScreen(props) {
                   </div>
                   <div className="cart-price">
                     <span>&#8358;</span>
-                    {item.price}
+                    {item.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
                   </div>
                 </li>
               ))
@@ -84,7 +84,7 @@ function CartScreen(props) {
         <h3>
           Subtotal ({cartItems.reduce((a, c) => Number(a) + Number(c.qty), 0)} items)
           : <span>&#8358;</span>{" "}
-          {cartItems.reduce((a, c) => Number(a) + Number(c.price * c.qty), 0)}
+          {cartItems.reduce((a, c) => Number(a) + Number(c.price * c.qty), 0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
         </h3>
         <button
           onClick={checkoutHandler}
