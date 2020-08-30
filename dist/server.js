@@ -34,7 +34,6 @@ app.use("/api/orders", _orderRoute.default);
 app.get("/api/config/paypal", (req, res) => {
   res.send(_config.default.PAYPAL_CLIENT_ID);
 });
-app.use('/uploads', _express.default.static(path.join(__dirname, '/../uploads')));
 app.use(_express.default.static(path.join(__dirname, '/../frontend/build')));
 app.get('*', (req, res) => {
   res.sendFile(path.join(`${__dirname}/../frontend/build/index.html`));
