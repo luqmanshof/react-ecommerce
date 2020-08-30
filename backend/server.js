@@ -31,6 +31,6 @@ app.get("/api/config/paypal", (req, res) => {
 //   res.sendFile(path.join(`${__dirname}/../frontend/build/index.html`));
 // });
 
-app.listen(3000, () => {
-  console.log("Server started at http://localhost:3000");
+app.listen(5000, () => {
+  console.log("Server started at http://localhost:5000");
 });
