@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 var _default = {
   products: [{
     _id: '1',
@@ -47,4 +47,4 @@ var _default = {
     countInStock: 0
   }]
 };
-exports["default"] = _default;
+exports.default = _default;

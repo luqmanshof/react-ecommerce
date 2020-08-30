@@ -3,13 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _mongoose = _interopRequireDefault(require("mongoose"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var shippingSchema = {
+const shippingSchema = {
   address: {
     type: String,
     required: true
@@ -27,13 +27,13 @@ var shippingSchema = {
     required: true
   }
 };
-var paymentSchema = {
+const paymentSchema = {
   paymentMethod: {
     type: String,
     required: true
   }
 };
-var orderItemSchema = new _mongoose["default"].Schema({
+const orderItemSchema = new _mongoose.default.Schema({
   name: {
     type: String,
     required: true
@@ -51,14 +51,14 @@ var orderItemSchema = new _mongoose["default"].Schema({
     required: true
   },
   product: {
-    type: _mongoose["default"].Schema.Types.ObjectId,
+    type: _mongoose.default.Schema.Types.ObjectId,
     ref: 'Product',
     required: true
   }
 });
-var orderSchema = new _mongoose["default"].Schema({
+const orderSchema = new _mongoose.default.Schema({
   user: {
-    type: _mongoose["default"].Schema.Types.ObjectId,
+    type: _mongoose.default.Schema.Types.ObjectId,
     ref: 'User',
     required: true
   },
@@ -79,14 +79,14 @@ var orderSchema = new _mongoose["default"].Schema({
   },
   isPaid: {
     type: Boolean,
-    "default": false
+    default: false
   },
   paidAt: {
     type: Date
   },
   isDelivered: {
     type: Boolean,
-    "default": false
+    default: false
   },
   deliveredAt: {
     type: Date
@@ -95,7 +95,7 @@ var orderSchema = new _mongoose["default"].Schema({
   timestamps: true
 });
 
-var orderModel = _mongoose["default"].model("Order", orderSchema);
+const orderModel = _mongoose.default.model("Order", orderSchema);
 
 var _default = orderModel;
-exports["default"] = _default;
+exports.default = _default;
