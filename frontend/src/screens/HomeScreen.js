@@ -43,7 +43,7 @@ function HomeScreen(props) {
             <button type="submit">Search</button>
           </form>
         </li>
-        <li>
+        <li hidden>
           <select name="sortOrder" onChange={sortHandler}>
             <option value="">Newest</option>
             <option value="lowest">Lowest</option>
