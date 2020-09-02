@@ -101,6 +101,9 @@ a:hover {
   max-width: 24rem;
   max-height: 24rem;
 }
+.product-detail {
+  justify-content: space-between;
+}
 .product-name {
   font-size: 2rem;
   font-weight: bold;

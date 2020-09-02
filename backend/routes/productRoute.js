@@ -30,7 +30,7 @@ router.post("/:id/reviews", isAuth, async (req, res) => {
   if (product) {
     const review = {
       name: req.body.name,
-      rating: Number(req.body.comment),
+      rating: Number(req.body.rating),
       comment: req.body.comment,
     };
     product.reviews.push(review);

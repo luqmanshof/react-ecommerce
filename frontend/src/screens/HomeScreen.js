@@ -68,19 +68,23 @@ function HomeScreen(props) {
                     alt="product"
                   />
                 </Link>
-                <div className="product-name">
-                  <Link to={"/product/" + product._id}>{product.name}</Link>
-                </div>
-                <div className="product-brand">{product.brand}</div>
-                <div className="product-price">
-                  <span>&#8358;</span>
-                  {product.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")}
-                </div>
-                <div className="product-rating">
-                  <Rating
-                    value={product.rating}
-                    text={product.numReviews + " reviews"}
-                  />
+                <div className="product-detail">
+                  <div className="product-name">
+                    <Link to={"/product/" + product._id}>{product.name}</Link>
+                  </div>
+                  <div className="product-brand">{product.brand}</div>
+                  <div className="product-price">
+                    <span>&#8358;</span>
+                    {product.price
+                      .toFixed(2)
+                      .replace(/\d(?=(\d{3})+\.)/g, "$&,")}
+                  </div>
+                  <div className="product-rating">
+                    <Rating
+                      value={product.rating}
+                      text={product.numReviews + " reviews"}
+                    />
+                  </div>
                 </div>
               </div>
             </li>
