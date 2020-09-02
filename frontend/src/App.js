@@ -16,8 +16,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import OrdersScreen from "./screens/OrdersScreen";
 
 function App() {
-
-  const userSignin = useSelector(state => state.userSignin);
+  const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
 
   const openMenu = () => {
@@ -33,17 +32,18 @@ function App() {
         <header className="header">
           <div className="brand">
             <button onClick={openMenu}>&#9776;</button>
-            <Link to="/">Watlids Treasured</Link>
+            <Link to="/">Watlids</Link>
           </div>
           <div className="header-links">
             <Link to="/cart">Cart</Link>
-            {
-              userInfo ? <Link to="/profile">{userInfo.name}</Link> :
-                <Link to="/signin">Sign In</Link>
-            }
+            {userInfo ? (
+              <Link to="/profile">{userInfo.name}</Link>
+            ) : (
+              <Link to="/signin">Sign In</Link>
+            )}
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
-                <a href="#" >Admin</a>
+                <a href="#">Admin</a>
                 <ul className="dropdown-content">
                   <li>
                     <Link to="/orders">Orders</Link>
@@ -52,8 +52,6 @@ function App() {
                 </ul>
               </div>
             )}
-
-
           </div>
         </header>
         <aside className="sidebar">
@@ -95,7 +93,7 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Watlids
+              Watlids Treasured
             </a>
           </strong>
         </footer>
