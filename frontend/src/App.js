@@ -35,7 +35,10 @@ function App() {
             <Link to="/">Watlids</Link>
           </div>
           <div className="header-links">
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">
+              <i class="fa fa-shopping-cart"> Cart</i>
+            </Link>
+
             {userInfo ? (
               <Link to="/profile">{userInfo.name}</Link>
             ) : (
