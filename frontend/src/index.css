@@ -478,6 +478,11 @@ tbody > tr:nth-child(odd) {
   border-radius: 0.5rem;
   border: 0.1rem #c0c0c0 solid;
   font-size: 1.6rem;
+  max-width: 10rem;
+}
+
+.filter select {
+  max-width: 20rem;
 }
 .categories {
   padding: 0;
@@ -490,4 +495,14 @@ tbody > tr:nth-child(odd) {
 
 .categories a:hover {
   background-color: #c0c0c0;
+}
+
+.product-category-name {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem auto;
+  max-width: 45rem;
+  justify-content: center;
+  color: #0b2e50;
 }

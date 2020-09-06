@@ -7,7 +7,8 @@ import Rating from "../components/Rating";
 function HomeScreen(props) {
   const [searchKeyword, setSearchKeyword] = useState("");
   const [sortOrder, setsortOrder] = useState("");
-  const category = props.match.params.id ? props.match.params.id : "";
+  const [category, setCategory] = useState("");
+  // const category = props.match.params.id ? props.match.params.id : "";
   const productList = useSelector((state) => state.productList);
   const { products, loading, error } = productList;
   const dispatch = useDispatch();
@@ -29,10 +30,13 @@ function HomeScreen(props) {
     dispatch(listProducts(category, searchKeyword, sortOrder));
   };
 
+  const searchCategory = (e) => {
+    setCategory(e.target.value);
+    dispatch(listProducts(category));
+  };
+
   return (
     <>
-      {category && <h2>{category}</h2>}
-
       <ul className="filter">
         <li>
           <form onSubmit={submitHandler}>
@@ -43,13 +47,28 @@ function HomeScreen(props) {
             <button type="submit">Search</button>
           </form>
         </li>
-        <li hidden>
-          <select name="sortOrder" onChange={sortHandler}>
-            <option value="">Newest</option>
+        <li>
+          <select name="category" onChange={searchCategory}>
+            <option value="">All Products</option>
+            <option value="Female Wears">Female Wears</option>
+            <option value="Female Lingeries">Female Lingeries</option>
+            <option value="Female Wears">Female Wears</option>
+            <option value="Body Shapers">Body Shapers</option>
+            <option value="Men Underwears">Men Underwears</option>
+            <option value="Men Wears">Men Wears</option>
+            <option value="Children Wears">Children Wears</option>
+            <option value="Back to School">Back to School</option>
+            <option value="Shoes and Bags">Shoes and Bags</option>
+            <option value="Household Items">Household Items</option>
+            <option value="Kitchen Wears">Kitchen Wears</option>
+            {/* <option value="">Newest</option>
             <option value="lowest">Lowest</option>
-            <option value="highest">Highest</option>
+            <option value="highest">Highest</option> */}
           </select>
         </li>
+      </ul>
+      <ul className="product-category-name">
+        <li>{category && <h2>{category}</h2>}</li>
       </ul>
 
       {loading ? (
