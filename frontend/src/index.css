@@ -194,8 +194,8 @@ a > .rating > span:last-child {
   flex: 2 1 60rem;
 }
 .details-image img {
-  max-width: 45rem;
-  max-height: 40rem;
+  max-width: 60rem;
+  max-height: 50rem;
   widows: 100%;
 }
 .details-info {
@@ -223,7 +223,6 @@ a > .rating > span:last-child {
   border-radius: 0.5rem;
   background-color: #f8f8f8;
   padding: 1rem;
-  max-width: 45rem;
 }
 .details-action ul li:last-child {
   display: flex;
