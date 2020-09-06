@@ -98,8 +98,8 @@ a:hover {
   height: 100%;
 }
 .product-image {
-  max-width: 24rem;
-  max-height: 24rem;
+  max-width: 30rem;
+  max-height: 26rem;
 }
 .product-detail {
   justify-content: space-between;
@@ -194,8 +194,8 @@ a > .rating > span:last-child {
   flex: 2 1 60rem;
 }
 .details-image img {
-  max-width: 60rem;
-  max-height: 50rem;
+  max-width: 50rem;
+  max-height: 40rem;
   widows: 100%;
 }
 .details-info {
@@ -478,11 +478,11 @@ tbody > tr:nth-child(odd) {
   border-radius: 0.5rem;
   border: 0.1rem #c0c0c0 solid;
   font-size: 1.6rem;
-  max-width: 10rem;
+  max-width: 8rem;
 }
 
 .filter select {
-  max-width: 20rem;
+  max-width: 16rem;
 }
 .categories {
   padding: 0;
