@@ -330,6 +330,12 @@ a > .rating > span:last-child {
   margin-top: 0;
   margin-bottom: 0;
 }
+.form-container select {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #c0c0c0 solid;
+  font-size: 1.6rem;
+}
 input {
   padding: 1rem;
   border: 0.1rem #c0c0c0 solid;

@@ -58,16 +58,43 @@ function App() {
           </div>
         </header>
         <aside className="sidebar">
-          <h3>Shopping Categories</h3>
+          <h3>Product Categories</h3>
           <button className="sidebar-close-button" onClick={closeMenu}>
             x
           </button>
           <ul className="categories">
             <li>
-              <Link to="/category/Shirts">Shirts</Link>
+              <Link to="/">All Products</Link>
             </li>
             <li>
-              <Link to="/category/Pants">Pants</Link>
+              <Link to="/category/Female%20Lingeries">Female Lingeries</Link>
+            </li>
+            <li>
+              <Link to="/category/Female%20Wears">Female Wears</Link>
+            </li>
+            <li>
+              <Link to="/category/Body%20Shapers">Body Shapers</Link>
+            </li>
+            <li>
+              <Link to="/category/Men%20Underwears">Men Underwears</Link>
+            </li>
+            <li>
+              <Link to="/category/Men%20Wears">Men Wears</Link>
+            </li>
+            <li>
+              <Link to="/category/Children%20Wears">Children Wears</Link>
+            </li>
+            <li>
+              <Link to="/category/Back%20to%20School">Back to School</Link>
+            </li>
+            <li>
+              <Link to="/category/Shoes%20and%20Bags">Shoes and Bags</Link>
+            </li>
+            <li>
+              <Link to="/category/Household%20Items">Household Items</Link>
+            </li>
+            <li>
+              <Link to="/category/Kitchen%20Wears">Kitchen Wears</Link>
             </li>
           </ul>
         </aside>

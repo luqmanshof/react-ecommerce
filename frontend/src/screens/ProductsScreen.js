@@ -125,7 +125,7 @@ function ProductsScreen(props) {
                 ></input>
               </li>
               <li>
-                <label htmlFor="name">Price</label>
+                <label htmlFor="price">Price</label>
                 <input
                   type="text"
                   name="price"
@@ -135,7 +135,7 @@ function ProductsScreen(props) {
                 ></input>
               </li>
               <li>
-                <label htmlFor="name">Image</label>
+                <label htmlFor="image">Image</label>
                 <input
                   type="text"
                   name="image"
@@ -147,7 +147,7 @@ function ProductsScreen(props) {
                 {uploading && <div>Uploading...</div>}
               </li>
               <li>
-                <label htmlFor="name">Brand</label>
+                <label htmlFor="brand">Brand</label>
                 <input
                   type="text"
                   name="brand"
@@ -167,17 +167,28 @@ function ProductsScreen(props) {
                 ></input>
               </li>
               <li>
-                <label htmlFor="name">Category</label>
-                <input
-                  type="text"
+                <label htmlFor="category">Category</label>
+                {/* <input type="text" name="category" value={category} id="category" onChange={(e) => setCategory(e.target.value)}></input> */}
+                <select
                   name="category"
-                  value={category}
                   id="category"
+                  value={category}
                   onChange={(e) => setCategory(e.target.value)}
-                ></input>
+                >
+                  <option value="Female Lingeries">Female Lingeries</option>
+                  <option value="Female Wears">Female Wears</option>
+                  <option value="Body Shapers">Body Shapers</option>
+                  <option value="Men Underwears">Men Underwears</option>
+                  <option value="Men Wears">Men Wears</option>
+                  <option value="Children Wears">Children Wears</option>
+                  <option value="Back to School">Back to School</option>
+                  <option value="Shoes and Bags">Shoes and Bags</option>
+                  <option value="Household Items">Household Items</option>
+                  <option value="Kitchen Wears">Kitchen Wears</option>
+                </select>
               </li>
               <li>
-                <label htmlFor="name">Description</label>
+                <label htmlFor="description">Description</label>
                 <textarea
                   name="description"
                   value={description}
